@@ -53,7 +53,7 @@ while True:
 		break
 
 	# resize the frame (so we can process it faster)
-	#frame = imutils.resize(frame, width=800)
+	frame = imutils.resize(frame, width=1200)
 
 	# grab the updated bounding box coordinates (if any) for each
 	# object that is being tracked
@@ -65,20 +65,6 @@ while True:
 		cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 	# show the output frame
-	#Let's display an image with some widgets to pan/zoom etc.
-	#---Note that imread, figure, and imshow come from matplotlib.pyplot
-	#---but %pylab notebook imported them into the namespace
-	#---This is good for notebooks, but not necessarily good for general practice.
-
-	import matplotlib.image as mpimg
-	from matplotlib.pyplot import imshow
-	%matplotlib inline
-	testim = mpimg.imread('butterfly.jpg')
-	figure()
-	imshow(testim)
-
-
-
 	cv2.imshow("Frame", frame)
 	key = cv2.waitKey(1) & 0xFF
 
