@@ -62,7 +62,7 @@ while True:
 	# loop over the bounding boxes and draw then on the frame
 	for box in boxes:
 		(x, y, w, h) = [int(v) for v in box]
-		cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+		cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 1)
 
 	# show the output frame
 	cv2.imshow("Frame", frame)
